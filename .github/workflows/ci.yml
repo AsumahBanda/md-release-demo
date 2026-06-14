@@ -1,0 +1,13 @@
+name: CI
+on: 
+  pull_request:
+   branches: [develop]
+jobs:
+ validate:
+   runs-on: ubuntu-latest
+   steps: 
+     uses: actions/checkout@v6
+  name: Check Markdown files exist
+        run: |
+          echo "Files in repo:"
+          find . -name "*.md" | grep -v node_modules
